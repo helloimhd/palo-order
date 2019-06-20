@@ -5,6 +5,18 @@ import OrderForm from './orderForm'
 class Order extends React.Component {
     constructor() {
         super();
+        this.state = {
+            //pre-selected country if on change then change
+            country: "SG",
+
+            // pre selected option
+            photoOne: 0,
+            photoTwo: 0,
+            photoThree: 0,
+            photoFour: 0,
+            photoFive: 0
+
+        }
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);

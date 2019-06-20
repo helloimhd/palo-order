@@ -15,11 +15,32 @@ const noOfCopies = [
     {value: 10}
 ]
 
-const
+// number of select tag depends on number of photos? for now just hardcode
+const noOfSelect = [
+    {ref: 1, name: "photoOne"},
+    {ref: 2, name: "photoTwo"},
+    {ref: 3, name: "photoThree"},
+    {ref: 4, name: "photoFour"},
+    {ref: 5, name: "photoFive"},
+]
 
 // display the form and let order component handle the change and submit
 class OrderForm extends React.Component {
+
     render() {
+        // 10 times
+        let optionTag = noOfCopies.map(obj => {
+            return <option>{obj.value}</option>
+        })
+
+        // 5 times
+        let selectTag = noOfSelect.map(obj => {
+            return <div className="form-group">
+                    <select name={obj.name} onChange={this.props.handleChange} className="form-control" required>
+                        {optionTag}
+                    </select>
+                    </div>
+        })
         return (
             <div>
                 <form autoComplete="off" onSubmit={this.props.handleSubmit}>
@@ -49,7 +70,7 @@ class OrderForm extends React.Component {
                             className="form-control"
                             type="tel"
                             name="phone"
-                            pattern="[8-9]{1}[0-9]{7}"
+                            // pattern="[8-9]{1}[0-9]{7}"
                             onChange={this.props.handleChange}
                             required
                         />
@@ -67,6 +88,14 @@ class OrderForm extends React.Component {
                     </div>
 
                     <div className="form-group">
+                        <label>Country: </label>
+                        <select name="country" onChange={this.props.handleChange} className="form-control">
+                            <option value="SG">SG</option>
+                            <option value="HK">HK</option>
+                        </select>
+                    </div>
+
+                    <div className="form-group">
                         <label>Postal Address:</label>
                         <input
                             className="form-control"
@@ -75,6 +104,8 @@ class OrderForm extends React.Component {
                             required
                         />
                     </div>
+
+                    {selectTag}
 
                     <button type="submit">Add to cart</button>
                 </form>
