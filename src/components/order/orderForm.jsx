@@ -74,7 +74,7 @@ class OrderForm extends React.Component {
                             className="form-control"
                             type="tel"
                             name="phone"
-                            // pattern="[8-9]{1}[0-9]{7}"
+                            pattern="[8-9]{1}[0-9]{7}"
                             onChange={this.props.handleChange}
                             required
                         />
