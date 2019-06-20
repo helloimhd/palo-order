@@ -1,4 +1,6 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
+
 import one from './galleryImages/1.jpg'
 import two from './galleryImages/2.jpg'
 import three from './galleryImages/3.jpg'
@@ -24,9 +26,10 @@ class GalleryForm extends React.Component {
         }
 
         this.nextPhoto = this.nextPhoto.bind(this);
+        this.payNow = this.payNow.bind(this);
     }
 
-    nextPhoto(e) {
+    nextPhoto() {
         // use state to check current ref/photo
         // when click, +1 to currentref so that it increases
         // update current ref state and img so that it will display the updated pic
@@ -34,7 +37,7 @@ class GalleryForm extends React.Component {
         // so on click i increase the current ref first
         let currentRef = this.state.currentRef;
         let nextRef = currentRef + 1;
-        console.log(nextRef)
+        //console.log(nextRef)
 
         if (images.length === nextRef) {
             // go back to the first photo
@@ -42,27 +45,34 @@ class GalleryForm extends React.Component {
         } else {
             // find nextref in the obj
             let newImg = images.find( obj => obj.ref === nextRef );
-            console.log(newImg)
+            //console.log(newImg)
             // update state - currentref and currentimg
             this.setState({currentRef: newImg.ref, currentImg: newImg.img})
         }
     }  // end of next photo
 
+    payNow() {
+        this.props.history.push({
+            pathname: "/order"
+        })
+    }
+
     render() {
         return (
             <div className="formContainer">
                 <h1>Gallery</h1>
+                <h2>Ref #{this.state.currentRef}</h2>
+                <button type="button" onClick={this.nextPhoto}>Next</button>
 
                 <div className="photoContainer">
-                    <h2>Ref{this.state.currentRef}</h2>
                     <img src={this.state.currentImg} className="img-fluid" />
                 </div>
 
-                <button type="button" onClick={this.nextPhoto}>Next</button>
+                <button onClick={this.payNow}>Pay Now!</button>
 
             </div>
         )
     }
 }  // end of gallery form
 
-export default GalleryForm;
+export default withRouter(GalleryForm);
