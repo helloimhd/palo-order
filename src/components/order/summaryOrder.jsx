@@ -1,6 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
-import styles from './style.css'
+//import styles from './style.css'
 
 // display input details - get state from order
 class SummaryOrder extends React.Component {

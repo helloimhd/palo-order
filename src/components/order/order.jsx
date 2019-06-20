@@ -1,6 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
-import styles from './style.css'
+//import styles from './style.css'
 import OrderForm from './orderForm'
 
 
@@ -18,7 +18,6 @@ class Order extends React.Component {
             photoThree: 0,
             photoFour: 0,
             photoFive: 0
-
         }
 
         this.handleChange = this.handleChange.bind(this);

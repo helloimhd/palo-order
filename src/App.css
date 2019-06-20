@@ -20,3 +20,29 @@ label {
 	padding: 20px;
 	margin: 100px auto 0;
 }
+
+
+/*ORDER*/
+.buttonContainer {
+	text-align: center;
+}
+
+.cartButton {
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 25px;
+}
+
+p {
+	line-height: 0;
+}
+
+.indvDetailContainer {
+	margin-bottom: 25px;
+}
+
+
+/*GALLERY*/
+.photoContainer {
+	margin: 80px;
+}

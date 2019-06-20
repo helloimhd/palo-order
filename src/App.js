@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Order from './components/order/order';
 import SummaryOrder from './components/order/summaryOrder';
+import GalleryForm from './components/gallery/galleryForm';
 
 function App() {
   return (
@@ -15,6 +16,10 @@ function App() {
 
         <Route path="/summaryOrder" render={() => (
             <SummaryOrder />
+        )} />
+
+        <Route path="/gallery" render={() => (
+            <GalleryForm />
         )} />
 
     </Router>
