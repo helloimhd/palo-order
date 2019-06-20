@@ -1,5 +1,8 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
+import styles from './style.css'
 import OrderForm from './orderForm'
+
 
 // order will handle the change of input and submit from orderform
 class Order extends React.Component {
@@ -33,7 +36,10 @@ class Order extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log(this.state)
+        this.props.history.push({
+            pathname: "/summaryOrder",
+            state: this.state
+        })
     }
 
     render() {
@@ -48,4 +54,4 @@ class Order extends React.Component {
     }
 }  // end of order
 
-export default Order;
+export default withRouter(Order);

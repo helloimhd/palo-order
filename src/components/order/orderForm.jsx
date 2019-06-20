@@ -36,13 +36,16 @@ class OrderForm extends React.Component {
         // 5 times
         let selectTag = noOfSelect.map(obj => {
             return <div className="form-group">
+                    <label>Number of copies for #{obj.ref}</label>
                     <select name={obj.name} onChange={this.props.handleChange} className="form-control" required>
                         {optionTag}
                     </select>
                     </div>
         })
         return (
-            <div>
+            <div className="formContainer">
+                <h1>Your Order: </h1>
+
                 <form autoComplete="off" onSubmit={this.props.handleSubmit}>
                     <div className="form-group">
                         <label>Last Name:</label>
@@ -107,7 +110,9 @@ class OrderForm extends React.Component {
 
                     {selectTag}
 
-                    <button type="submit">Add to cart</button>
+                    <div className="buttonContainer">
+                        <button type="submit" className="cartButton">Add to cart</button>
+                    </div>
                 </form>
             </div>
         )

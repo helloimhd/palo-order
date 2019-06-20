@@ -1,0 +1,12 @@
+body {
+	background-image: url(./home.jpg)
+}
+
+h1 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+label {
+	font-weight: 700;
+}

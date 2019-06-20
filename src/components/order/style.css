@@ -1,0 +1,19 @@
+.formContainer {
+	background-color: white;
+	border-radius: 20px;
+	height: 600px;
+	width: 750px;
+	overflow: scroll;
+	padding: 20px;
+	margin: 100px auto 0;
+}
+
+.buttonContainer {
+	text-align: center;
+}
+
+.cartButton {
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 25px;
+}
